@@ -47,11 +47,17 @@
     </ul>
 
     <!-- LOGO Start -->
-    <div class="logo-box">
+    <div class="logo-box hidden">
         <a href="/admin/dashboard" class="logo text-center">
-            <span class="logo-lg-text-dark">E-Voting</span>
+            <span class="logo-sm">
+                <span class="logo-lg-text-dark"></span>
+            </span>
+            <span class="logo-lg">
+                <span class="logo-lg-text-dark">E-Voting</span>
+            </span>
         </a>
     </div>
+
     <!-- LOGO End -->
 
     <ul class="list-unstyled topnav-menu topnav-menu-left m-0">

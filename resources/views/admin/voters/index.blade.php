@@ -65,6 +65,7 @@
                                   <th>Voter ID</th>
                                   <th>Nama Lengkap</th>
                                   <th>Password</th>
+                                  <th>Status</th>
                                   <th>Action</th>
                               </tr>
                           </thead>
@@ -77,6 +78,13 @@
                                   <td>{{ $item->username }}</td>
                                   <td>{{ $item->fullname }}</td>
                                   <td>{{ $item->password_text }}</td>
+                                  <td>
+                                    @if ($item->status == 'voted')
+                                    <span class="badge badge-soft-success badge-pill py-1 px-2">Voted</span>
+                                    @else
+                                    <span class="badge badge-soft-danger badge-pill py-1 px-2">Not Voted</span>
+                                    @endif
+                                  </td>
                                   <td>
                                     <button type="button" class="btn btn-warning waves-effect waves-light btn-xs edit-button" data-id="{{ $item->id }}">
                                       <i data-feather="edit-3"></i>

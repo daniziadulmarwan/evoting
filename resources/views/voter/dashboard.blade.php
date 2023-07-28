@@ -44,7 +44,7 @@
                 <a href="/voter/dashboard" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 dark:hover:bg-gray-600 dark:text-gray-200 dark:hover:text-white">Dashboard</a>
               </li>
               <li>
-                <a href="javascript:void()" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 dark:hover:bg-gray-600 dark:text-gray-200 dark:hover:text-white">Settings</a>
+                <a data-modal-target="settingModal" data-modal-toggle="settingModal" href="javascript:void()" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 dark:hover:bg-gray-600 dark:text-gray-200 dark:hover:text-white">Settings</a>
               </li>
               <li>
                 <form action="/logout" method="post" class="inline-block w-full">
@@ -126,6 +126,8 @@
   @endif
 
   <x-voter.footer />
+
+  @include('voter.setting')
 
 
   @livewireScripts

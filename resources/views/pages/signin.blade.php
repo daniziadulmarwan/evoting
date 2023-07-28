@@ -42,13 +42,13 @@
                         <div class="auth-logo">
                             <a href="/" class="logo logo-dark text-center">
                                 <span class="logo-lg">
-                                    <img src="/assets/images/green.png" alt="" height="150">
+                                    <img src="/assets/images/md.png" alt="" height="150">
                                 </span>
                             </a>
         
                             <a href="/" class="logo logo-light text-center">
                                 <span class="logo-lg">
-                                    <img src="/assets/images/green.png" alt="" height="150">
+                                    <img src="/assets/images/md.png" alt="" height="150">
                                 </span>
                             </a>
                         </div>

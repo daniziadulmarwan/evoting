@@ -36,4 +36,13 @@ class VoteController extends Controller
             'msg' => 'Berhasil hapus data'
         ]);
     }
+
+    public function delete(Request $request)
+    {
+        $confirm = $request->input('confirm');
+        if ($confirm == 'yes') {
+            Vote::truncate();
+        }
+        return to_route('vote.index')->with('msg', 'Success delete all data');
+    }
 }

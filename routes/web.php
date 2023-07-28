@@ -41,6 +41,7 @@ Route::prefix('/admin')->middleware('auth')->group(function () {
 Route::prefix('/admin')->middleware('auth')->group(function () {
     route::get('/vote', [VoteController::class, 'index'])->name('vote.index');
     route::post('/vote', [VoteController::class, 'store'])->name('vote.store');
+    route::delete('/vote/delete', [VoteController::class, 'delete'])->name('vote.delete');
     route::delete('/vote/{id}', [VoteController::class, 'destroy'])->name('vote.destroy');
 });
 

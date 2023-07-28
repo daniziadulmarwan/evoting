@@ -26,7 +26,21 @@
                   </div>
               </div>
           </div>     
-          <!-- end page title --> 
+          <!-- end page title -->
+
+          <!-- Alert -->
+          <div class="row">
+            <div class="col-md-12">
+              @if (session()->has('msg'))
+                <div class="alert alert-success alert-dismissible fade show" role="alert">
+                  <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                    <span aria-hidden="true">×</span>
+                  </button>
+                  <i class="mdi mdi-check-all mr-2"></i> {{ session('msg') }}
+                </div>
+              @endif
+            </div>
+          </div>
 
           <!-- Main Content Start -->
           <div class="row">
@@ -36,7 +50,7 @@
                         
                       <!-- Buttons -->
                       <div class="mb-3">
-                        <button class="btn btn-danger">
+                        <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#warning-alert-modal">
                           <i data-feather="refresh-cw"></i> Reset
                         </button>
                       </div>
@@ -50,7 +64,13 @@
                               </tr>
                           </thead>
                           <tbody>
-                            
+                            @foreach ($data as $item)
+                                <tr>
+                                  <td>{{ $item->candidate }}</td>
+                                  <td>{{ $item->position }}</td>
+                                  <td>{{ $item->voter }}</td>
+                                </tr>
+                            @endforeach
                           </tbody>
                       </table>
                     </div>
@@ -60,6 +80,9 @@
           <!-- Main Content End -->
       </div>
   </div>
+
+  <!-- Alert Modal -->
+  @include('admin.vote.destroy')
 @endsection
 
 @push('script')

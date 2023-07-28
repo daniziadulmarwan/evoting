@@ -2,7 +2,7 @@
   <div class="h-100" data-simplebar>
     <!-- User box -->
     <div class="user-box text-center">
-        <img src="/assets/images/light.png" alt="user-img" title="{{ auth()->user()->fullname }}"
+        <img src="/assets/images/md.png" alt="user-img" title="{{ auth()->user()->fullname }}"
             class="rounded-circle avatar-md">
         <div class="dropdown">
             <a href="javascript: void(0);" class="text-dark dropdown-toggle h5 mt-2 mb-1 d-block"
