@@ -5,19 +5,19 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>EVoting</title>
-   <!-- Fonts Poppins -->
-   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <!-- Fonts Poppins -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 
-   @livewireStyles
+    <link rel="stylesheet" href="/custom/main.css">
+    @livewireStyles
 
-    @vite('resources/css/app.css')
+    {{-- @vite('resources/css/app.css') --}}
 
     <style>
       body {
         font-family: 'Poppins', sans-serif;
       }
     </style>
-  
 </head>
 <body>
 <div class="flex flex-col justify-between h-screen">
