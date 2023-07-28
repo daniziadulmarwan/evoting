@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>Evoting | Sign In</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta content="A fully featured admin theme which can be used to build CRM, CMS, etc." name="description" />
+    <meta content="Coderthemes" name="author" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <!-- App favicon -->
+    <link rel="shortcut icon" href="/assets/images/favicon.png">
+
+    <!-- Fonts Poppins -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+    <!-- App css -->
+    <link href="/assets/css/bootstrap.min.css" rel="stylesheet" type="text/css" id="bs-default-stylesheet" />
+    <link href="/assets/css/app.min.css" rel="stylesheet" type="text/css" id="app-default-stylesheet" />
+
+    <link href="/assets/css/bootstrap-dark.min.css" rel="stylesheet" type="text/css" id="bs-dark-stylesheet" disabled />
+    <link href="/assets/css/app-dark.min.css" rel="stylesheet" type="text/css" id="app-dark-stylesheet"  disabled />
+
+    <!-- Icons -->
+    <link href="/assets/css/icons.min.css" rel="stylesheet" type="text/css" />
+
+    <style>
+      body {
+        font-family: 'Poppins', sans-serif;
+      }
+    </style>
+  </head>
+
+    <body class="auth-fluid-pages pb-0">
+
+      <div class="auth-fluid">
+        <div class="auth-fluid-form-box">
+            <div class="align-items-center d-flex h-100">
+                <div class="card-body">
+
+                    <!-- Logo -->
+                    <div class="auth-brand text-center text-lg-left">
+                        <div class="auth-logo">
+                            <a href="/" class="logo logo-dark text-center">
+                                <span class="logo-lg">
+                                    <img src="/assets/images/green.png" alt="" height="150">
+                                </span>
+                            </a>
+        
+                            <a href="/" class="logo logo-light text-center">
+                                <span class="logo-lg">
+                                    <img src="/assets/images/green.png" alt="" height="150">
+                                </span>
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- Error -->
+                    <div class="row">
+                        <div class="col-md-12">
+                        @if (session()->has('error'))
+                            <div class="alert alert-danger alert-dismissible fade show" role="alert">
+                            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                                <span aria-hidden="true">×</span>
+                            </button>
+                            <i class="mdi mdi-block-helper mr-2"></i> {{ session('error') }}
+                            </div>
+                        @endif
+                        </div>
+                    </div>
+
+                    <!-- Title-->
+                    <h4 class="mt-0">Sign In</h4>
+                    <p class="text-muted mb-4">Enter your email address and password to access account.</p>
+
+                    <!-- Form Start -->
+                    <form action="{{ route('signin') }}" method="post">
+                        @csrf
+                        <div class="form-group">
+                            <label for="username">Username</label>
+                            <input class="form-control @error('username') is-invalid @enderror" type="text" id="username" placeholder="Enter username" name="username">
+                            @error('username')
+                                <div class="invalid-feedback">
+                                    {{ $message }}
+                                </div>
+                            @enderror
+                        </div>
+
+                        <div class="form-group">
+                            <label for="password">Password</label>
+                            <div class="input-group input-group-merge">
+                                <input type="password" id="password" class="form-control @error('password') is-invalid @enderror" placeholder="Enter your password" name="password">
+                                <div class="input-group-append" data-password="false">
+                                    <div class="input-group-text">
+                                        <span class="password-eye"></span>
+                                    </div>
+                                </div>
+                                @error('password')
+                                    <div class="invalid-feedback">
+                                        {{ $message }}
+                                    </div>
+                                @enderror
+                            </div>
+                        </div>
+                      
+                        <x-button type="submit" title="Sign In" />
+                    </form>
+                    <!-- Form End -->
+
+                    <!-- Footer-->
+                    <footer class="footer footer-alt">
+                        <p class="text-muted">2023@ EVoting App By <a href="https://daniziadulmarwan.github.io" target="_blank" class="text-success ml-1"><b>Zeiteim Tech</b></a></p>
+                    </footer>
+
+                </div>
+            </div>
+        </div>
+
+        <div class="auth-fluid-right text-center">
+            <div class="auth-user-testimonial">
+                <h2 class="mb-3 text-white">Al - Qur'an Al - Karim</h2>
+                <p class="lead"><i class="mdi mdi-format-quote-open"></i>  Boleh jadi kamu membenci sesuatu, padahal ia amat baik bagimu, dan boleh jadi (pula) kamu menyukai sesuatu, padahal ia amat buruk bagimu. Allah mengetahui, sedang kamu tidak mengetahui. <i class="mdi mdi-format-quote-close"></i>
+                </p>
+                <h5 class="text-white">
+                    - Q.S. Al - Baqarah 216
+                </h5>
+            </div>
+        </div>
+      </div>
+
+      <!-- Vendor js -->
+      <script src="/assets/js/vendor.min.js"></script>
+
+      <!-- App js -->
+      <script src="/assets/js/app.min.js"></script>
+    </body>
+</html>
