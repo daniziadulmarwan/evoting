@@ -7,6 +7,11 @@
       </div>
 
       <div class="modal-body">
+
+        <div class="mb-4 text-center">
+          <a href="/assets/template/import-template.xlsx" class="font-italic" style="text-decoration: underline">Unduh template <i data-feather="download-cloud"></i></a>
+        </div>
+
         <form action="{{ route('voter.import') }}" method="post" enctype="multipart/form-data">
           @csrf
           <x-form.input-file name="document" label="Upload File" />

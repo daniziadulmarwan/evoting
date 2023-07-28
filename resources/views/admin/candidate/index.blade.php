@@ -74,7 +74,7 @@
                                   </td>
                                   <td>{{ $item->fullname }}</td>
                                   <td>
-                                    <span class="badge badge-soft-success">
+                                    <span class="badge badge-soft-success py-1 px-1">
                                       {{ $item->position?->description ?? "" }}
                                     </span>
                                   </td>
