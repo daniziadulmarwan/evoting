@@ -13,7 +13,7 @@
       <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 
       <!-- App favicon -->
-      <link rel="shortcut icon" href="/assets/images/favicon.png">
+      <link rel="shortcut icon" href="/assets/images/md.png">
 
       <!-- Plugins css -->
       <link href="/assets/libs/flatpickr/flatpickr.min.css" rel="stylesheet" type="text/css" />
