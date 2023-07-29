@@ -11,7 +11,7 @@
     <link rel="shortcut icon" href="/assets/images/md.png">
 
     <!-- Fonts Poppins -->
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Pacifico&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 
     <!-- App css -->
     <link href="/assets/css/bootstrap.min.css" rel="stylesheet" type="text/css" id="bs-default-stylesheet" />
@@ -23,9 +23,14 @@
     <!-- Icons -->
     <link href="/assets/css/icons.min.css" rel="stylesheet" type="text/css" />
 
+    <link rel="stylesheet" href="/assets/custom/clock.css">
+
     <style>
       body {
         font-family: 'Poppins', sans-serif;
+      }
+      .head-title {
+        font-family: 'Pacifico', cursive;
       }
     </style>
   </head>
@@ -115,12 +120,17 @@
             </div>
         </div>
 
-        <div class="auth-fluid-right text-center">
-            <div class="auth-user-testimonial">
-                <h2 class="mb-3 text-white">Al - Qur'an Al - Karim</h2>
+        <div class="auth-fluid-right text-center" style="background: #c9d5e0">
+
+            <div class="text-center d-flex justify-content-center">
+                <x-widget.clock />
+            </div>
+
+            <div class="auth-user-testimonial text-dark">
+                <h2 class="mb-3 text-dark head-title">Al - Qur'an Al - Karim</h2>
                 <p class="lead"><i class="mdi mdi-format-quote-open"></i>  Boleh jadi kamu membenci sesuatu, padahal ia amat baik bagimu, dan boleh jadi (pula) kamu menyukai sesuatu, padahal ia amat buruk bagimu. Allah mengetahui, sedang kamu tidak mengetahui. <i class="mdi mdi-format-quote-close"></i>
                 </p>
-                <h5 class="text-white">
+                <h5 class="text-dark">
                     - Q.S. Al - Baqarah 216
                 </h5>
             </div>
@@ -132,5 +142,7 @@
 
       <!-- App js -->
       <script src="/assets/js/app.min.js"></script>
+
+      <script src="/assets/custom/clock.js"></script>
     </body>
 </html>
