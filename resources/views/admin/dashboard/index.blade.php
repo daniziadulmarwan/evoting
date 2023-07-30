@@ -116,5 +116,5 @@
 @endsection
 
 @push('script')
-  <script src="/assets/custom/chart.js"></script>
+  {{-- <script src="/assets/custom/chart.js"></script> --}}
 @endpush

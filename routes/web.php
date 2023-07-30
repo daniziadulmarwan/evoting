@@ -8,6 +8,7 @@ use App\Http\Controllers\Admin\VoteController;
 use App\Http\Controllers\Admin\VoterController;
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\MainController;
+use App\Http\Livewire\Admin\Dashboard\Index;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', [AuthController::class, 'signin'])->name('login');
@@ -15,7 +16,8 @@ Route::post('/login', [AuthController::class, 'login'])->name('signin');
 Route::delete('/logout', [AuthController::class, 'logout'])->name('signout');
 
 Route::prefix('/admin')->middleware('auth')->group(function () {
-    route::get('/dashboard', [DashboardController::class, 'index'])->name('dashboard.index');
+    // route::get('/dashboard', [DashboardController::class, 'index'])->name('dashboard.index');
+    route::get('/dashboard', Index::class);
     route::get('/dashboard/chart', [DashboardController::class, 'chart'])->name('dashboard.chart');
 });
 

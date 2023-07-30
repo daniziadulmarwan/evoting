@@ -112,9 +112,7 @@
                     <!-- Form End -->
 
                     <!-- Footer-->
-                    <footer class="footer footer-alt">
-                        <p class="text-muted">2023@ EVoting App By <a href="https://daniziadulmarwan.github.io" target="_blank" class="text-success ml-1"><b>Zeiteim Tech</b></a></p>
-                    </footer>
+                    <x-signin-footer />
 
                 </div>
             </div>
