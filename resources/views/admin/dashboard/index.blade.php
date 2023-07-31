@@ -104,7 +104,8 @@
             <div class="col-md-12">
               <div class="card">
                 <div class="card-body">
-                  <div id="poling-chart"></div>
+                  {{-- <div id="poling-chart"></div> --}}
+                  <canvas id="poling-chart" height="100"></canvas>
                 </div>
               </div>
             </div>
@@ -116,5 +117,6 @@
 @endsection
 
 @push('script')
-  {{-- <script src="/assets/custom/chart.js"></script> --}}
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <script src="/assets/custom/chart.js"></script>
 @endpush

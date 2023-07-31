@@ -37,7 +37,19 @@
     </div>
   </div>
 
-  <div class="form-group">
+  <div class="form-group mb-3">
+    <label for="status">Position</label>
+    <select wire:model="status" class="form-control @error('status') is-invalid @enderror" id="sts">
+        <option hidden value="">Choose</option>
+        <option value="voted" @if ($status == 'voted') selected @endif>Voted</option>
+        <option value="notvoted" @if ($status == 'notvoted') selected @endif>Not Voted</option>
+    </select>
+    @error('status')
+      <div class="invalid-feedback">{{ $message }}</div>
+    @enderror
+  </div>
+
+  <div class="form-group mb-3">
     <label class="form-label" for="photo">Upload Photo</label>
     <input wire:model="newPhoto" type="file" class="form-control-file uploadFile" id="photo" />
   </div>

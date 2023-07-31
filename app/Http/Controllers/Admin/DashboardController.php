@@ -23,6 +23,8 @@ class DashboardController extends Controller
     public function chart()
     {
         $candidate = Candidate::select('fullname', 'point')->orderBy('point', 'desc')->limit(11)->get();
-        return response()->json($candidate);
+        $labels = $candidate->pluck('fullname');
+        $points = $candidate->pluck('point');
+        return response()->json(compact('labels', 'points'));
     }
 }

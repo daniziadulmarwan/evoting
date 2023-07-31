@@ -11,7 +11,7 @@ class Edit extends Component
 {
     use WithFileUploads;
 
-    public $fullname, $username, $password_text, $voterId, $oldPhoto, $newPhoto;
+    public $fullname, $username, $password_text, $voterId, $oldPhoto, $newPhoto, $status;
 
     protected $listeners = ['edit-voter' => 'edit'];
 
@@ -28,6 +28,7 @@ class Edit extends Component
         $this->voterId = $data->id;
         $this->oldPhoto = $data->photo;
         $this->username = $data->username;
+        $this->status = $data->status;
     }
 
     public function update()
@@ -38,12 +39,14 @@ class Edit extends Component
             Storage::delete($this->oldPhoto);
             $data->fullname = $this->fullname;
             $data->username = $this->username;
+            $data->status = $this->status;
             $data->photo = $this->newPhoto->store('photos');
             $data->save();
             return redirect('/admin/voter')->with('msg', 'Success update data and save photo');
         } else {
             $data->fullname = $this->fullname;
             $data->username = $this->username;
+            $data->status = $this->status;
             $data->save();
             return redirect('/admin/voter')->with('msg', 'Success update data');
         }
