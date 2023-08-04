@@ -8,7 +8,18 @@ use App\Http\Controllers\Admin\VoteController;
 use App\Http\Controllers\Admin\VoterController;
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\MainController;
+use App\Models\Speed;
 use Illuminate\Support\Facades\Route;
+
+
+Route::get('/realtime-chart/datas', function() {
+    Speed::create(['speed' => rand(30, 80)]);
+
+    $speeds = Speed::latest()->take(30)->get()->sortBy('id');
+    $labels = $speeds->pluck('id');
+    $datas = $speeds->pluck('speed');
+    return response()->json(compact('labels', 'datas'));
+});
 
 Route::get('/', [AuthController::class, 'signin'])->name('login');
 Route::post('/login', [AuthController::class, 'login'])->name('signin');
@@ -53,4 +64,8 @@ Route::prefix('/admin')->middleware('auth')->group(function () {
 Route::prefix('/voter')->middleware('auth:voter')->group(function () {
     route::get('/dashboard', [MainController::class, 'index'])->name('main.voter.index');
     route::post('/vote', [MainController::class, 'vote'])->name('main.voter.vote');
+});
+
+Route::get('/realtime-chart', function() {
+    return view('realtime-chart');
 });
