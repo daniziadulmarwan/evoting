@@ -6,7 +6,7 @@ let myChart = new Chart(ctx, {
         labels: [],
         datasets: [
             {
-                label: "Quick Count of Votes",
+                label: "Realtime Chart",
                 data: [],
                 borderWidth: 1,
             },
